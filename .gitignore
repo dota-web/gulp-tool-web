@@ -1,0 +1,41 @@
+/node_modules
+
+/.idea
+.vscode
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.psd
+
+# Logs and databases #
+######################
+*.log
+*.sqlite
+
+# Videos and audios #
+######################
+*.mp4
+*.m4v
+*.flv
+*.mov
+*.mp3
+
+# OS generated files #
+######################
+.env.php
+.DS_Store
+.cache
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
