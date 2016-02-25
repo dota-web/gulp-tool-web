@@ -7,7 +7,7 @@
 ##### 首先要有一个node环境，这个就不在累述，建议使用nvm安装和管理本地的node版本。
 #### 安装步骤
 - npm install
-- gulp server
+- gulp server 
 #### 常见问题
 - 版本不同，如果你本地node版本跟安装包里面的包 不兼容的情况， 可以 npm install 'XXXXX' --save；
-- npm 安装过程很慢， 国内阿里有一个镜像的安装包 cnpm(http://npm.taobao.org/)
+- npm 安装过程很慢， 国内阿里有一个镜像的安装包 cnpm(http://npm.taobao.org/

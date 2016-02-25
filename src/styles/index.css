@@ -16,7 +16,18 @@ nav {
   height: 100px;
   background: #ddd;
 }
+.body {
+  background: #f60;
+}
 footer {
   font-size: 12px;
   text-align: center;
+  height: 40px;
+  line-height: 40px;
+  background-color: #efefef;
+  background-image: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
