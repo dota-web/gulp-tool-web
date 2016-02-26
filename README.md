@@ -6,8 +6,10 @@
 ###安装使用方式
 ##### 首先要有一个node环境，这个就不在累述，建议使用nvm安装和管理本地的node版本。
 #### 安装步骤
-- npm install
-- gulp server 
+- npm install 安装服务中所需要的包。
+- gulp server 启动node的web服务，包括转译less， browser-sync 文件更新自动更新浏览器等功能,用于开发。
+- gulp imagesmin 压缩图片，对应的目录默认是在 /dist/images 也可以在配置中自行设置
+- gulp html 发布到生产环境中时，合并，压缩 css，和js 文件。 默认生产的文件目录 /dist
 #### 常见问题
 - 版本不同，如果你本地node版本跟安装包里面的包 不兼容的情况， 可以 npm install 'XXXXX' --save；
-- npm 安装过程很慢， 国内阿里有一个镜像的安装包 cnpm(http://npm.taobao.org/
+- npm 安装过程很慢， 国内阿里有一个镜像的安装包 cnpm(http://npm.taobao.org/)
