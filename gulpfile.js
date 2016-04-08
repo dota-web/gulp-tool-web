@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var browserSync = require('browser-sync').create();
+var browserify = require('gulp-browserify');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var autoprefixer = require('gulp-autoprefixer');
@@ -8,6 +9,7 @@ var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
 var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
+var rename = require('gulp-rename');
 var del = require('del');
 
 //browser prefixer systems;
@@ -36,7 +38,7 @@ gulp.task('watch-less', function () {
 });
 
 //build web server； node web server， like apache, nginx; 
-gulp.task('server', ['less'], function () {
+gulp.task('server', ['less', 'js'], function () {
     browserSync.init({
         server: {
             baseDir: "./src",
@@ -45,6 +47,7 @@ gulp.task('server', ['less'], function () {
         port: 3600 //port  can set self
     });
     gulp.watch('./src/**/*.less', ['less']);
+    gulp.watch('src/**/*.js', ['js-watch']);
     gulp.watch('./src/pages/*.html').on('change', browserSync.reload)
 });
 
@@ -67,4 +70,16 @@ gulp.task('html', function () {
         .pipe(gulpif('*.js', uglify() ))
         .pipe(gulpif('*.css', minifyCss() ))
         .pipe(gulp.dest('dist'));
+});
+
+//watch js reload pages
+gulp.task('js-watch', ['js'], browserSync.reload);
+
+// build module js
+gulp.task('js', function () {
+    gulp.src('./src/scripts/main.js')
+    .pipe(browserify())
+    // .pipe(uglify())
+    .pipe(rename('bundle.js'))
+    .pipe(gulp.dest('./src/scripts/'));
 });

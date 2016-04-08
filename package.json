@@ -2,7 +2,11 @@
   "name": "web-build-self",
   "version": "0.1.1",
   "auther": "MMxiao",
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-browserify": "^0.5.1",
+    "gulp-rename": "^1.2.2",
+    "jquery": "^2.2.3"
+  },
   "dependencies": {
     "browser-sync": "^2.11.0",
     "del": "^2.2.0",
