@@ -12,6 +12,10 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var del = require('del');
 
+//deal with error;
+var plumber = require('gulp-plumber')
+var handleErrors = require('./gulp/handleErrors.js')
+
 //browser prefixer systems;
 var AUTOPREFIXER_BROWSERS = [
     'Android 2.3',
@@ -19,13 +23,16 @@ var AUTOPREFIXER_BROWSERS = [
     'Chrome >= 20',
     'Firefox >= 24', // Firefox 24 is the latest ESR
     'Explorer >= 9',
-    'iOS >= 6',
+    'iOS >= 8',
     'Safari >= 6'
 ];
 
 //build task less to css;
 gulp.task('less', function () {
     return gulp.src('./src/less/*.less')
+        .pipe(plumber({
+            errorHandler: handleErrors
+        }))
         .pipe(less())
         .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
         .pipe(gulp.dest('src/styles'))
@@ -39,6 +46,7 @@ gulp.task('watch-less', function () {
 
 //build web server； node web server， like apache, nginx; 
 gulp.task('server', ['less', 'js'], function () {
+    console.log('watch')
     browserSync.init({
         server: {
             baseDir: "./src",
@@ -47,7 +55,7 @@ gulp.task('server', ['less', 'js'], function () {
         port: 3600 //port  can set self
     });
     gulp.watch('./src/**/*.less', ['less']);
-    gulp.watch('src/**/*.js', ['js-watch']);
+    gulp.watch('src/scripts/**/*.js', ['js-watch']);
     gulp.watch('./src/pages/*.html').on('change', browserSync.reload)
 });
 
@@ -69,17 +77,23 @@ gulp.task('html', function () {
         .pipe(useref())
         .pipe(gulpif('*.js', uglify() ))
         .pipe(gulpif('*.css', minifyCss() ))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist/pages'));
 });
 
 //watch js reload pages
-gulp.task('js-watch', ['js'], browserSync.reload);
+gulp.task('js-watch', ['js'], function (done) {
+    browserSync.reload();
+    done();
+});
 
 // build module js
 gulp.task('js', function () {
-    gulp.src('./src/scripts/main.js')
+    return gulp.src('./src/scripts/main.js') //set index modules js 
+    .pipe(plumber({
+        errorHandler: handleErrors
+    }))
     .pipe(browserify())
     // .pipe(uglify())
     .pipe(rename('bundle.js'))
-    .pipe(gulp.dest('./src/scripts/'));
+    .pipe(gulp.dest('./src/build/'));
 });

@@ -6,7 +6,3 @@ module.exports = {
 		alert('delete');
 	}
 }
-
-/*function test1() {
-    console.log('test1');
-}*/

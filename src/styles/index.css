@@ -1,3 +1,241 @@
+.hairline-remove-right-bottom {
+  border-bottom: 0;
+}
+.hairline-remove-right-bottom:after {
+  display: none;
+}
+.hairline-remove-right-bottom-bak:after {
+  display: none;
+}
+.hairline-remove-left-top:before {
+  display: none;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  font-size: 20px;
+}
+body {
+  min-height: 100%;
+}
+body {
+  background-color: #f7f8f8;
+  -webkit-text-size-adjust: 100% !important;
+}
+body,
+input,
+textarea,
+select,
+button {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #212121;
+  font-family: PingFang SC, Helvetica Neue, Hiragino Sans GB, Helvetica, Microsoft YaHei, Arial;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  text-align: left;
+}
+input,
+textarea,
+button,
+select,
+pre,
+xmp,
+tt,
+code,
+kbd,
+samp {
+  line-height: inherit;
+  font-family: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small,
+big,
+input,
+textarea,
+button,
+select {
+  font-size: inherit;
+}
+address,
+cite,
+dfn,
+em,
+i,
+optgroup,
+var {
+  font-style: normal;
+}
+fieldset,
+img {
+  border: 0;
+  vertical-align: middle;
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+caption,
+th {
+  text-align: left;
+}
+q:before,
+q:after {
+  content: "";
+}
+input {
+  line-height: normal;
+}
+a {
+  color: #212121;
+  text-decoration: none;
+}
+input:password {
+  ime-mode: disabled;
+}
+textarea,
+pre,
+xmp {
+  overflow: auto;
+}
+textarea {
+  resize: vertical;
+}
+input,
+textarea,
+button,
+select a {
+  outline: 0 none;
+}
+input:required {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"]::-webkit-file-upload-button,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+input,
+textarea,
+button,
+select {
+  color: inherit;
+}
+input:disabled,
+textarea:disabled,
+button:disabled,
+select:disabled {
+  opacity: 1;
+}
+a,
+img {
+  -webkit-touch-callout: none;
+}
+*:focus {
+  outline: none;
+}
+@font-face {
+  font-family: "byicon";
+  src: url('../fonts/iconfont.eot?v=0.0.4');
+  /* IE9*/
+  src: url('../fonts/iconfont.eot?t=0.0.4#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/iconfont.woff?t=0.0.4') format('woff'), /* chrome, firefox */ url('../fonts/iconfont.ttf?t=0.0.4') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('../fonts/iconfont.svg?t=0.0.4#byicon') format('svg');
+  /* iOS 4.1- */
+}
+.icon {
+  font-family: "byicon" !important;
+  font-size: 14px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-arrow-right:before {
+  content: '\e605';
+}
+.icon-ring:before {
+  content: '\e613';
+}
+.icon-coin:before {
+  content: '\e6e9';
+}
+.icon-duihao:before {
+  content: '\e6d7';
+}
+.icon-loading:before {
+  content: '\e606';
+  display: inline-block;
+  -webkit-animation: loadingCircle 1s infinite linear;
+          animation: loadingCircle 1s infinite linear;
+}
+@-webkit-keyframes loadingCircle {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+@keyframes loadingCircle {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
 body,
 html {
   margin: 0;
@@ -10,11 +248,15 @@ html {
 header {
   font-size: 16px;
   color: #f60;
+  text-align: center;
 }
 nav {
   width: 100%;
   height: 100px;
+  line-height: 100px;
+  font-size: 2rem;
   background: #ddd;
+  text-align: center;
 }
 .body {
   background: #f60;
