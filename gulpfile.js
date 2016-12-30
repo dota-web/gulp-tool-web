@@ -73,11 +73,11 @@ gulp.task('imagemin', function () {
 //built probuct web pages (js、css min and)
 gulp.task('html', function () {
     del(['dist']);
-    return gulp.src('src/pages/*.html')
+    return gulp.src('src/*.html')
         .pipe(useref())
         .pipe(gulpif('*.js', uglify() ))
         .pipe(gulpif('*.css', minifyCss() ))
-        .pipe(gulp.dest('dist/pages'));
+        .pipe(gulp.dest('dist/'));
 });
 
 //watch js reload pages
