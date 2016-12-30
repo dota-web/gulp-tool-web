@@ -1,0 +1,35 @@
+@toastPrefixCls: toast;
+
+.@{toastPrefixCls} {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: @toastZIndex;
+
+  &-text {
+    min-width: 1.2rem;
+    display: inline-block;
+    margin: auto @h-spacing-lg;
+    border-radius: @radius-sm;
+    color: @color-text-base-inverse;
+    background-color: @fill-overlay-inverse;
+    font-size: @font-size-base;
+    line-height: 1.18;
+    padding: @v-spacing-md @h-spacing-lg;
+  }
+
+  &-text-icon {
+    border-radius: @radius-lg;
+    padding: @v-spacing-lg;
+  }
+
+  .icon {
+    font-size: @icon-size-lg;
+    margin-bottom: @v-spacing-md;
+  }
+}

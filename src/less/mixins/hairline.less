@@ -1,0 +1,53 @@
+.hairline-top(@color:@border-color-base, @width: @border-width-sm) {
+  border-top: @width solid @color;
+}
+
+.hairline-bottom(@color:@border-color-base, @left:0, @width: @border-width-sm) {
+  &:after {
+    display: block;
+    position: absolute;
+    content: '';
+    left: @left;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    width: 100%;
+    border-bottom: @width solid @color;
+  }
+}
+
+.hairline-right(@color:@border-color-base) {
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: auto;
+    bottom: auto;
+    width: @border-width-sm;
+    height: 100%;
+    background-color: @color;
+    display: block;
+  }
+}
+
+// For right and bottom
+.hairline-remove-right-bottom {
+  border-bottom: 0;
+  &:after {
+    display: none;
+  }
+}
+
+.hairline-remove-right-bottom-bak {
+  &:after {
+    display: none;
+  }
+}
+
+// For left and top
+.hairline-remove-left-top {
+  &:before {
+    display: none;
+  }
+}

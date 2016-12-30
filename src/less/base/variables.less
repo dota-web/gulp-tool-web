@@ -1,0 +1,175 @@
+// 色彩
+// ---
+// 文字色
+@color-text-base: #212121;                  // 基本
+@color-text-base-inverse: #fff;          // 基本 - 反色
+@color-text-placeholder: #ccc;           // 文本框提示
+@color-text-disabled: #bbb;              // 失效
+@color-text-caption: #888;               // 辅助描述
+@color-text-paragraph: #333;             // 段落
+@color-link: @brand-primary;             // 链接
+
+// 阴影色
+@color-shadow: rgba(100, 100, 100, .2);  // 阴影色
+
+// 背景色
+@fill-base: #fff;                           // 组件默认背景
+@fill-body: #f5f5f9;                        // 页面背景
+@fill-tap: #ddd;                            // 组件默认背景 - 按下
+@fill-disabled: #b6b6b6;                       // 通用失效背景
+@fill-mask: rgba(0, 0, 0, .5);              // 遮罩背景
+@fill-overlay-inverse: rgba(0, 0, 0, .8);   // 浮层背景 - 反色，用于 toast
+
+// 透明度
+@opacity-disabled: 0.3;   // switch checkbox radio 等组件禁用的透明度
+
+// 全局/品牌色
+@brand-primary: #3e98f0;
+@brand-primary-tap: #1284d6;
+@brand-success: #6abf47;
+@brand-warning: #f86e21;
+@brand-error: #f4333c;
+@brand-hot: #f96268;        // 用于推荐/促销/折扣
+@brand-important: #ff3b30;  // 用于小红点
+
+// 边框色
+@border-color-base: #f7f8f8;
+
+@icon-url: "../fonts";
+@icon-version: "0.0.4";
+// 字体尺寸
+// ---
+@font-size-icontext: 20px;
+@font-size-caption-sm:12px;
+@font-size-base: 14px;
+@font-size-subhead: 14px;
+@font-size-caption: 14px;
+@font-size-heading: 16px;
+@font-size-display-sm: 16px;
+@font-size-display-md: 18px;
+@font-size-display-lg: 20px;
+@font-size-display-xl: 22px;
+
+// 字体家族
+// ---
+@font-family-base: PingFang SC,Helvetica Neue,Hiragino Sans GB,Helvetica,Microsoft YaHei,Arial;
+@font-family-code: Consolas,Menlo,Courier,monospace;
+
+// 圆角
+// ---
+@radius-xs: 2px;
+@radius-sm: 3px;
+@radius-md: 5px;
+@radius-lg: 7px;
+
+// 边框尺寸
+// ---
+@border-width-sm: 1px;
+@border-width-md: 2px;
+@border-width-lg: 4px;
+
+// 间距
+// ---
+// 水平间距
+@h-spacing-sm: 5px;
+@h-spacing-md: 8px;
+@h-spacing-lg: 15px;
+
+// 垂直间距
+@v-spacing-xs: 2px;
+@v-spacing-sm: 5px;
+@v-spacing-md: 8px;
+@v-spacing-lg: 15px;
+@v-spacing-xl: 18px;
+
+// 高度
+// ---
+@option-height: 42px;           // action-sheet、popover 等组件的选项高度
+
+// 图标尺寸
+// ---
+@icon-size-xxs: 15px;
+@icon-size-xs: 18px;
+@icon-size-sm: 20px;
+@icon-size-md: 22px;       // 导航条上的图标、grid的图标大小
+@icon-size-lg: 36px;
+
+// 动画缓动
+// ---
+@ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+
+// 组件变量
+// ---
+
+// button
+@button-height: 40px;
+@button-font-size: 16px;
+
+@button-height-sm: 24px;
+@button-font-size-sm: 12px;
+
+@across-button-height: 40px;   // 通栏按钮高度
+
+@primary-button-fill: @brand-primary;
+@primary-button-fill-tap: @brand-primary-tap;
+
+@ghost-button-color: @brand-primary;    // 同时应用于背景、文字颜色、边框色
+@ghost-button-fill-tap: @brand-primary-tap;
+
+@link-button-fill-tap: #ddd;
+@link-button-font-size: 14px;
+
+// list
+@list-title-height: 30px;
+@list-item-height-sm: 35px;
+@list-item-height: 45px;
+@list-body-border-width: 1px;
+@list-body-border-color: @border-color-base;
+
+// input
+@input-label-width: 34px;       // InputItem、TextareaItem 文字长度基础值
+@input-font-size: 14px;
+@input-color-icon: #ccc;
+@input-color-icon-tap: @brand-primary;
+@input-color-icon-inverse: rgba(255, 255, 255, .6);
+@input-color-icon-tap-inverse: rgba(255, 255, 255, .4);
+
+// tabs
+@tabs-color: @brand-primary;
+@tabs-height: 42px;
+@tabs-font-size-heading: 15px;
+
+// segmented-control
+@segmented-control-color: @brand-primary;  // 同时应用于背景、文字颜色、边框色
+@segmented-control-height: 27px;
+@segmented-control-fill-tap: fade(@brand-primary, 0.1);
+
+// tab-bar
+@tab-bar-height: 25px;
+
+// search-bar
+@search-bar-input-height: 28px;
+
+// notice-bar
+@notice-bar-fill: #fffada;
+@notice-bar-height: 36px;
+
+// switch
+@switch-fill: #4dd865;
+
+// tag
+@tag-height: 24px;
+@tag-small-height: 24px;
+
+// table
+@table-title-height: 30px;
+
+// z-index
+@progressZIndex: 2000;
+@popoverZIndex: 1999;
+@toastZIndex: 1999;
+@actionSheetZIndex: 1000; // actonsheet 会放到 popup / modal 中
+@datePickerZIndex: 1000;  // picker 会放到 popup / modal 中
+@pickerZIndex: 1000;
+@popupZIndex: 999;
+@modalZIndex: 999; // modal.alert 应该最大，其他应该较小

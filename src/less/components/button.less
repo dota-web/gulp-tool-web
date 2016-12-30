@@ -1,0 +1,111 @@
+@buttonPrefixCls: btn;
+
+.@{buttonPrefixCls} {
+  position: relative;
+  display: inline-block;
+  outline: 0 none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  font-size: @button-font-size;
+  height: @button-height;
+  line-height: @button-height;
+  border: 0 none;
+  border-radius: @radius-md;
+
+  &:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 200%;
+    content: " ";
+    border-radius: @radius-md * 2;
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+
+  // default
+  color: @color-text-base;
+  background-color: @fill-base;
+  &:after {
+    border: @border-width-sm solid @border-color-base;
+  }
+  // &:active, // uc browser not work normal
+  &&-active {
+    background-color: @fill-tap;
+  }
+
+  &-primary {
+    color: @color-text-base-inverse;
+    background-color: @primary-button-fill;
+    &:after {
+      border: @border-width-sm solid @primary-button-fill;
+    }
+    // &:active, // uc browser not work normal
+    &.@{buttonPrefixCls}-active {
+      background-color: @primary-button-fill-tap;
+    }
+  }
+
+  &-ghost {
+    color: @ghost-button-color;
+    background-color: transparent;
+    &:after {
+      border: @border-width-md solid @ghost-button-color;
+    }
+    // &:active, // uc browser not work normal
+    &.@{buttonPrefixCls}-active {
+      color: @color-text-base-inverse;
+      background-color: @ghost-button-fill-tap;
+      &:after {
+        border: @border-width-sm solid @ghost-button-color;
+      }
+    }
+  }
+
+  &-disabled {
+    &:disabled {
+      color: @color-text-base-inverse;
+      background-color: @fill-disabled;
+      &:after {
+        border: 0;
+      }
+    }
+  }
+
+  &-inline {
+    width: auto;
+    padding: 0 @h-spacing-lg;
+  }
+
+  &-small {
+    font-size: @button-font-size-sm;
+    height: @button-height-sm;
+    line-height: @button-height-sm;
+    border-radius: @radius-md;
+    padding: 0 @h-spacing-sm;
+  }
+
+  &-warning {
+    color: @brand-warning;
+    background-color: @fill-base;
+    &:after {
+      border: @border-width-sm solid #f88b88;
+    }
+    // &:active, // uc browser not work normal
+    &.@{buttonPrefixCls}-active {
+      background-color: #fdcccb;
+    }
+  }
+
+  // To ensure that a space will be placed between character and `Icon`.
+  > .anticon + span,
+  > span + .anticon {
+    margin-left: 0.5em;
+  }
+
+}

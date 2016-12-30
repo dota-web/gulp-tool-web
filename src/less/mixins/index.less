@@ -1,0 +1,12 @@
+// Encoded SVG Background
+.encoded-svg-background(@svg) {
+  @url: `encodeURIComponent(@{svg})`;
+  background-image: url("data:image/svg+xml;charset=utf-8,@{url}");
+}
+
+@import "clearfix";
+@import "ellipsis";
+@import "overflow";
+@import "flex";
+@import "size";
+@import "hairline";
