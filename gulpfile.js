@@ -56,7 +56,7 @@ gulp.task('server', ['less', 'js'], function () {
     });
     gulp.watch('./src/**/*.less', ['less']);
     gulp.watch('src/scripts/**/*.js', ['js-watch']);
-    gulp.watch('./src/pages/*.html').on('change', browserSync.reload)
+    gulp.watch('./src/*.html').on('change', browserSync.reload)
 });
 
 //imgages min task
